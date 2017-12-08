@@ -105,6 +105,14 @@
     border-radius: 20px;
 }
 
+.Tomato {
+    width: 80%;
+    height: 6%;
+    margin: 2% auto;
+    background: linear-gradient(#c94541, #e62525);
+    border-radius: 20px;
+}
+
 .Bacon {
     width: 80%;
     height: 3%;
