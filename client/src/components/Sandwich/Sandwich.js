@@ -4,13 +4,16 @@ import SandwichIngredient from './SandwichIngredient/SandwichIngredient';
 import classes from './Sandwich.css';
 
 const sandwich = (props) => {
+    const transformedIngredients = Object.keys(props.ingredients)
+        .map(igKey => {
+            return [...Array(props.ingredients[igKey])].map((_, i) => {
+                return <SandwichIngredient key={igKey + i} type={igKey} />;
+            });
+        });
     return(
         <div className={classes.Sandwich}>
             <SandwichIngredient type="bread-top" />
-            <SandwichIngredient type="cheese" />
-            <SandwichIngredient type="meat" />
-            <SandwichIngredient type="tomato" />
-            <SandwichIngredient type="salad" />
+            {transformedIngredients}
             <SandwichIngredient type="bread-bottom" />
         </div>
     );
