@@ -3,6 +3,7 @@ import Aux from '../../hoc/Aux';
 import Sandwich from '../../components/Sandwich/Sandwich';
 import BuildControls from '../../components/Sandwich/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
+import OrderSummary from '../../components/Sandwich/OrderSummary/OrderSummary';
 
 const INGREDIENT_PRICES = {
     salad: .65, 
