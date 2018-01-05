@@ -77,7 +77,9 @@ class SandwichBuilder extends Component {
         }
         return(
             <Aux>
-                <Modal />
+                <Modal>
+                    <OrderSummary ingredients={this.state.ingredients}/>
+                </Modal>
                 <Sandwich ingredients={this.state.ingredients} />
                 <BuildControls ingredientAdded={this.addIngredientHandler}
                                ingredientRemoved={this.removeIngredientHandler}
