@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
 import Sandwich from '../../components/Sandwich/Sandwich';
 import BuildControls from '../../components/Sandwich/BuildControls/BuildControls';
+import Modal from '../../components/UI/Modal/Modal';
 
 const INGREDIENT_PRICES = {
     salad: .65, 
@@ -75,6 +76,7 @@ class SandwichBuilder extends Component {
         }
         return(
             <Aux>
+                <Modal />
                 <Sandwich ingredients={this.state.ingredients} />
                 <BuildControls ingredientAdded={this.addIngredientHandler}
                                ingredientRemoved={this.removeIngredientHandler}
