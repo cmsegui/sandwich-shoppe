@@ -4,6 +4,8 @@ import Sandwich from '../../components/Sandwich/Sandwich';
 import BuildControls from '../../components/Sandwich/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Sandwich/OrderSummary/OrderSummary';
+import axios from '../../axios-orders';
+
 
 const INGREDIENT_PRICES = {
     salad: .65, 
@@ -78,7 +80,25 @@ class SandwichBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        alert("Let's Continue!");
+        //alert("Let's Continue!");
+        const order = {
+            ingredients: this.state.ingredients,
+            price: this.state.totalPrice,
+            customer: {
+                name: 'Mia Bones',
+                address: {
+                    street: '123 Rockingway Street',
+                    zipCode: '30303',
+                    state: 'Georgia'
+                },
+                email: 'mia@email.com',
+            },
+            deliveryMethod: 'ASAP'
+        }
+        axios.post('/orders.json', order)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+        
     }
 
     render() {
