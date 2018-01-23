@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Aux/Aux';
-import axios from '../../axios-orders';
 
 
 const withErrorHandler = (WrappedComponent, axios) => {
