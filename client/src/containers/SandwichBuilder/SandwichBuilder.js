@@ -5,6 +5,7 @@ import BuildControls from '../../components/Sandwich/BuildControls/BuildControls
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Sandwich/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
 
 
@@ -142,4 +143,4 @@ class SandwichBuilder extends Component {
     }
 }
 
-export default SandwichBuilder;
+export default withErrorHandler(SandwichBuilder, axios);
