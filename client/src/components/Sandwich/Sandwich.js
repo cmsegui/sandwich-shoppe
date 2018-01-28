@@ -4,6 +4,7 @@ import classes from './Sandwich.css';
 import SandwichIngredient from './SandwichIngredient/SandwichIngredient';
 
 const sandwich = ( props ) => {
+    console.log(props);
     let transformedIngredients = Object.keys( props.ingredients )
         .map( igKey => {
             return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
